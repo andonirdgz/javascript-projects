@@ -1,3 +1,18 @@
+* {
+  margin: 0;
+  background-color: #e0e8ff;
+}
+
+.order-summary-page {
+  display: flex;
+  height: 97vh;
+  align-items: center;
+  justify-content: center;
+  background-image: url('./images/pattern-background-desktop.svg');
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
+
 .card {
   width: 450px;
   height: 697px;
