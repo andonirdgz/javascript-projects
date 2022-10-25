@@ -1,5 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@500;700;900&display=swap');
 
+:root {
+  --card-height: 697px;
+  --card-width: 450px;
+  --card-content-width: 354px;
+}
+
 body {
   margin: 0;
   background-color: #e0e8ff;
@@ -8,6 +14,7 @@ body {
 
 .order-summary-page {
   display: flex;
+  overflow: auto;
   height: 97vh;
   align-items: center;
   justify-content: center;
@@ -17,8 +24,8 @@ body {
 }
 
 .card {
-  width: 450px;
-  height: 697px;
+  width: var(--card-width);
+  height: var(--card-height);
   background-color: #ffffff;
   border-radius: 20px;
   box-shadow: 0px 40px 40px -20px rgba(13, 48, 189, 0.151826);
@@ -27,6 +34,8 @@ body {
 
 .card-image {
   border-radius: 20px 20px 0 0;
+  width: var(--card-width);
+  height: auto;
 }
 
 .title {
@@ -38,12 +47,12 @@ body {
 
 .description {
   color: #717fa6;
-  width: 354px;
+  width: var(--card-content-width);
   margin: 17px auto 0 auto;
 }
 
 .product {
-  width: 354px;
+  width: var(--card-content-width);
   height: 98px;
   margin: 20px auto 0 auto;
   display: flex;
@@ -55,6 +64,7 @@ body {
 
 .product-detail-container {
   display: flex;
+  align-items: center;
   margin-left: 25px;
 }
 
@@ -85,7 +95,7 @@ body {
 }
 
 .card-footer {
-  width: 354px;
+  width: var(--card-content-width);
   margin: 32px auto 0 auto;
 }
 
@@ -121,9 +131,44 @@ body {
 }
 
 @media screen and (max-width: 375px) {
+  :root {
+    --card-height: 567px;
+    --card-width: 327px;
+    --card-content-width: 279px;
+  }
+
   .order-summary-page {
     background-image: url('./images/pattern-background-mobile.svg');
     background-repeat: no-repeat;
     background-size: 100%;
+  }
+
+  .title {
+    margin-top: 32px;
+  }
+
+  .description {
+    margin: 16px auto 0 auto;
+  }
+
+  .product {
+    height: 81px;
+    margin: 24px auto 0 auto;
+    font-size: 14px;
+  }
+
+  .product-detail-container {
+    margin-left: 16px;
+  }
+
+  .product-actions {
+    margin-right: 16px;
+    font-size: 13px;
+  }
+
+  .card-footer,
+  .cancel-button {
+    width: var(--card-content-width);
+    margin: 24px auto 0 auto;
   }
 }
